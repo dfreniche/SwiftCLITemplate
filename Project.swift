@@ -13,6 +13,7 @@ let target = Target(name: appName,
                     platform: .macOS,
                     product: .commandLineTool,
                     bundleId: bundleId,
+                    deploymentTarget: .macOS(targetVersion: "10.1"),
                     infoPlist: .default,
                     sources: [
                         "Sources/**"
