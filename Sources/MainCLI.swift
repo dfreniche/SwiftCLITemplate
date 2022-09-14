@@ -4,7 +4,8 @@ import ArgumentParser
 import Files
 import SwiftFigletKit
 
-
+// Sample Main Entry Point for your CLI app
+// This is the sync version (not using async calls in code)
 @main
 struct MainCLI: ParsableCommand {
     @Flag(name: [.customLong("flag"), .customShort("f")],
@@ -12,5 +13,13 @@ struct MainCLI: ParsableCommand {
     var flag = false
     
     func run() throws {
+        // let's print all files in current directory!
+        for f in try readFilesInDirectory() {
+            print("File: \(f)")
+        }
+        
+        for f in try readFilesInDirectory(path: "~/", includeHidden: true) {
+            print("File: \(f)")
+        }
     }
 }
