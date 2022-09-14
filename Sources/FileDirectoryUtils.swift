@@ -1,33 +1,21 @@
-//
-//  FileDirectoryUtils.swift
-//  FileDirectoryUtils
-//
-//  Created by Diego Freniche Brito on 5/8/21.
-//
-
 import Foundation
 import Files
 
-func readFoldersInDirectory() throws -> [String] {
-    var folderNames: [String] = []
-    
-    try Folder(path: ".").subfolders.enumerated().forEach { (index, file) in
-//            print("index: \(index)".blue.onWhite + " folder: \(file.name)")
-        folderNames.append(file.name)
-    }
-    
-    return folderNames
-}
-
-func readFilesInDirectory(includeHidden: Bool = false) throws -> [String] {
+/// Reads all files in current directory
+/// - Parameters:
+///   - path: path of the directory we want to list
+///   - includeHidden: set to true if you want to include also hidden files
+/// - Throws: Error in case path doesn't exists, it's malformed, etc.
+/// - Returns: Array of file names
+func readFilesInDirectory(path: String = ".", includeHidden: Bool = false) throws -> [String] {
     var fileNames: [String] = []
     
     if includeHidden {
-        try Folder(path: ".").files.includingHidden.enumerated().forEach { (index, file) in
+        try Folder(path: path).files.includingHidden.enumerated().forEach { (index, file) in
             fileNames.append(file.name)
         }
     } else {
-        try Folder(path: ".").files.enumerated().forEach { (index, file) in
+        try Folder(path: path).files.enumerated().forEach { (index, file) in
             fileNames.append(file.name)
         }
     }

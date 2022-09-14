@@ -1,7 +1,6 @@
 import Foundation
 
 extension Process {
-    
     /// Runs a command from this program
     /// - Parameters:
     ///   - command: full path to the program we want to launch
