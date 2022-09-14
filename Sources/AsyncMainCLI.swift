@@ -15,9 +15,7 @@ import Files
 
 // Sample Main Entry Point for your CLI app
 // This is the async version (using async calls in code to download an image)
-// You need to pass the image to download as a
-// CODE IS COMMENTED OUT BECAUSE YOU CAN'T HAVE TWO @main IN THE SAME APP
-// CHOOSE THIS OR MainCLI
+// You need to pass the image to download as an argument to this app
 @available(macOS 12.0, *)
 @main
 struct MyFirstCLIProject: AsyncParsableCommand {
@@ -25,7 +23,6 @@ struct MyFirstCLIProject: AsyncParsableCommand {
     var imageURL: String
     
     mutating func run() async {
-        
         print("Starting download...".blue)
         
         if let url = URL(string: imageURL) {
