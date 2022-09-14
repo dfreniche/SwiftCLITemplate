@@ -13,7 +13,7 @@ let target = Target(name: appName,
                     platform: .macOS,
                     product: .commandLineTool,
                     bundleId: bundleId,
-                    deploymentTarget: .macOS(targetVersion: "10.1"),
+                    deploymentTarget: .macOS(targetVersion: "10.13"),
                     infoPlist: .default,
                     sources: [
                         "Sources/**"
@@ -45,7 +45,7 @@ let prj = Project(name: appName,
                     .package(url: "https://github.com/apple/swift-argument-parser", from: "1.0.0"),
                     .package(url: "https://github.com/JohnSundell/Files", from: "4.0.0"),
                     .package(url: "https://github.com/pakLebah/ANSITerminal", from: "0.0.3"),
-                    .package(url: "https://github.com/dfreniche/SwiftFiglet", .upToNextMajor(from: "0.2.1"))
+                    .package(url: "https://github.com/dfreniche/SwiftFiglet", from: "0.2.1")
                   ],
                   targets: [
                     target
