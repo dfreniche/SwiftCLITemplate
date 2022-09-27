@@ -30,7 +30,10 @@ struct MyFirstCLIProject: AsyncParsableCommand {
             do {
                 let (data, urlResponse) = try await URLSession.shared.data(from: url)
                 
-                print("Hay datos".green)
+                // this will print in Green using ANSI characters
+                // You'll see weird chars in Xcode console, run on a real
+                // Terminal
+                print("Found data!".green)
                 
                 try showImage(data)
             } catch {

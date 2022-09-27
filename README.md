@@ -1,4 +1,4 @@
-# macOS CLI Template
+# macOS CLI Template 🖥
 
 ## Motivation
 
@@ -7,13 +7,15 @@ I'm writing more and more Swift CLI apps these days. And as I solve more problem
 ## Prerequisites
 
 This template uses Tuist to generate the project, so you need:
-- Xcode 13 & 14 Beta 6 (not tested with other versions, should work)
+- Xcode 13 & 14 (not tested with other versions, should work)
+- Make sure you're using the right Command Line Tools for the version of Xcode you're using. `xcode-select -p` prints the path to the Command Line Tools active. In Xcode Settings you can change the active ones. 
 - Install [Tuist](https://tuist.io/). I'm using Tuist 3, so if you already have Tuist installed check your version or run `tuist update`.
 
 ## How to use it
 
 - 👥 clone this repo with `git clone https://github.com/dfreniche/SwiftCLITemplate`
-- 💻 `cd SwiftCLITemplate`
+- 💻 rename that folder with `mv SwiftCLITemplate MyCLIApp`
+- 💻 `cd SwiftCLITemplate` (or if you renamed, `cd MyCLIApp`)
 - 📝 edit & change parameters in `Project.swift`
 - 💻 run `tuist generate`
 - 🛠 open generated project
@@ -25,8 +27,20 @@ A simple CLI macOS App with an async starting point `AsyncMainCLI.swift`. It dow
 
 ## Troubleshooting
 
-To generate the Project not using Tuist caches:
+- To generate the Project not using Tuist caches use:
 
 ```bash
 tuist fetch && tuist generate --no-cache
 ```
+
+- if yu get `"error: 'swiftpackagemanager': Invalid manifest"`
+
+Apparently, after installing Xcode 14 on macOS Monterrey (12.6), Xcode path was incorrect:
+
+Fixed it with the command:
+
+```bash
+sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+```
+
+Source: [issue](https://github.com/dfreniche/SwiftCLITemplate/issues/1)
