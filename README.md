@@ -2,7 +2,7 @@
 
 ## Motivation
 
-I'm writing more and more Swift CLI apps these days. And as I solve more problems with these litte tools, I find that I'm copying the same code and utilities from one project to the next. Also, I'm importing the same packages over and over. So I wanted to automate the creation of macOS Swift CLI Projects, and have kind of a "starter template Swift-based CLI Xcode Project"
+I'm writing more and more Swift CLI apps these days. And as I solve more problems with these little tools, I find that I'm copying the same code and utilities from one project to the next. Also, I'm importing the same packages over and over. So I wanted to automate the creation of macOS Swift CLI Projects, and have kind of a "starter template Swift-based CLI Xcode Project"
 
 ## Prerequisites
 
@@ -33,7 +33,7 @@ A simple CLI macOS App with an async starting point `AsyncMainCLI.swift`. It dow
 tuist fetch && tuist generate --no-cache
 ```
 
-- if yu get `"error: 'swiftpackagemanager': Invalid manifest"`
+- if you get `"error: 'swiftpackagemanager': Invalid manifest"`
 
 Apparently, after installing Xcode 14 on macOS Monterrey (12.6), Xcode path was incorrect:
 
